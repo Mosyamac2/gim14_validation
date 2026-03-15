@@ -1,7 +1,7 @@
 # GIM-14 Model Validation Suite
 
 A comprehensive validation framework for the GIM-14 geopolitical simulation model,
-implementing 10 qualitative architecture tests and 5 quantitative metric tests.
+implementing 12 qualitative architecture tests and 9 quantitative metric tests.
 
 ## Setup
 
