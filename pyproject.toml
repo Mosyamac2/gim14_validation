@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "gim14-validation"
+version = "1.0.0"
+description = "GIM-14 Model Validation Suite"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.scripts]
+gim14-validate = "gim14_validation.run_validation:main"
+
+[tool.setuptools.packages.find]
+include = ["gim14_validation*"]
