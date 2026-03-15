@@ -39,6 +39,30 @@ if GIM_REPO_ROOT is not None and str(GIM_REPO_ROOT) not in sys.path:
 
 
 # ---------------------------------------------------------------------------
+# .env file loader — reads DEEPSEEK_API_KEY and other vars from .env
+# ---------------------------------------------------------------------------
+def _load_dotenv():
+    """Load .env file from the project directory if it exists."""
+    env_path = Path(__file__).resolve().parent / ".env"
+    if not env_path.exists():
+        return
+    for line in env_path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip()
+        # Only set if not already in environment (explicit env wins)
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+_load_dotenv()
+
+
+# ---------------------------------------------------------------------------
 # GIM-14 imports (lazy, so import errors are reported at call-time)
 # ---------------------------------------------------------------------------
 
@@ -120,6 +144,57 @@ def run_steps(world, years: int = 5, seed: int = 42,
     trajectory = [copy.deepcopy(w)]
     for _ in range(years):
         w = g["step_world"](w, policies, enable_extreme_events=enable_extreme_events)
+        trajectory.append(copy.deepcopy(w))
+    return trajectory
+
+
+def require_api_key() -> str:
+    """Return the DEEPSEEK_API_KEY or raise with a clear message."""
+    key = os.environ.get("DEEPSEEK_API_KEY", "")
+    if not key:
+        raise RuntimeError(
+            "DEEPSEEK_API_KEY is not set. "
+            "Copy .env.example to .env and fill in your key, "
+            "or export DEEPSEEK_API_KEY=sk-..."
+        )
+    return key
+
+
+def run_steps_llm(world, years: int = 3, seed: int = 42,
+                  enable_extreme_events: bool = False,
+                  action_log: list | None = None) -> list:
+    """
+    Run *years* simulation steps using LLM policies.
+    Requires DEEPSEEK_API_KEY to be set.
+    Returns the trajectory [world_t0, ..., world_tN].
+    *action_log*, if provided, accumulates per-agent action records.
+    """
+    require_api_key()
+    g = gim()
+
+    os.environ["SIM_SEED"] = str(seed)
+    os.environ.pop("NO_LLM", None)              # enable LLM
+    os.environ.pop("USE_SIMPLE_POLICIES", None)  # enable LLM
+    os.environ["POLICY_MODE"] = "llm"
+    if not enable_extreme_events:
+        os.environ["DISABLE_EXTREME_EVENTS"] = "1"
+    else:
+        os.environ.pop("DISABLE_EXTREME_EVENTS", None)
+
+    # Reduce concurrency for validation (predictable, low-cost)
+    os.environ.setdefault("LLM_MAX_CONCURRENCY", "4")
+    os.environ.setdefault("LLM_BATCH_SIZE", "10")
+
+    policies = g["make_policy_map"](world.agents.keys(), mode="llm")
+    memory: dict = {}
+    w = copy.deepcopy(world)
+    trajectory = [copy.deepcopy(w)]
+    for _ in range(years):
+        w = g["step_world"](
+            w, policies, memory=memory,
+            enable_extreme_events=enable_extreme_events,
+            action_log=action_log,
+        )
         trajectory.append(copy.deepcopy(w))
     return trajectory
 

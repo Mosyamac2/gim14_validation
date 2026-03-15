@@ -45,16 +45,24 @@ TEST_REGISTRY = {
     "Q8":  "gim14_validation.qualitative.q08_credit_lag",
     "Q9":  "gim14_validation.qualitative.q09_actor_inference",
     "Q10": "gim14_validation.qualitative.q10_equilibrium",
+    "Q11": "gim14_validation.qualitative.q11_llm_heterogeneity",
+    "Q12": "gim14_validation.qualitative.q12_llm_fallback",
     # Quantitative
     "T1":  "gim14_validation.quantitative.t01_lyapunov",
     "T2":  "gim14_validation.quantitative.t02_sensitivity",
     "T3":  "gim14_validation.quantitative.t03_crisis_replication",
     "T4":  "gim14_validation.quantitative.t04_relation_audit",
     "T5":  "gim14_validation.quantitative.t05_outcome_calibration",
+    "T6":  "gim14_validation.quantitative.t06_llm_sanity",
+    "T7":  "gim14_validation.quantitative.t07_llm_reproducibility",
+    "T8":  "gim14_validation.quantitative.t08_llm_coherence",
+    "T9":  "gim14_validation.quantitative.t09_llm_vs_simple",
 }
 
 QUALITATIVE_IDS = [k for k in TEST_REGISTRY if k.startswith("Q")]
 QUANTITATIVE_IDS = [k for k in TEST_REGISTRY if k.startswith("T")]
+LLM_TEST_IDS = ["Q11", "Q12", "T6", "T7", "T8", "T9"]
+NON_LLM_IDS = [k for k in TEST_REGISTRY if k not in LLM_TEST_IDS]
 
 
 def import_and_run(test_id: str, verbose: bool = False) -> dict:
@@ -133,7 +141,15 @@ def main():
     )
     parser.add_argument(
         "--quantitative", action="store_true",
-        help="Run only quantitative tests (T1-T5).",
+        help="Run only quantitative tests (T1-T9).",
+    )
+    parser.add_argument(
+        "--llm", action="store_true",
+        help="Run only LLM-dependent tests (Q11, Q12, T6-T9). Requires DEEPSEEK_API_KEY.",
+    )
+    parser.add_argument(
+        "--no-llm", action="store_true", dest="no_llm",
+        help="Run only non-LLM tests (Q1-Q10, T1-T5).",
     )
     parser.add_argument(
         "--output", "-o", default="validation_results.json",
@@ -157,6 +173,10 @@ def main():
         test_ids = QUALITATIVE_IDS
     elif args.quantitative:
         test_ids = QUANTITATIVE_IDS
+    elif args.llm:
+        test_ids = LLM_TEST_IDS
+    elif args.no_llm:
+        test_ids = NON_LLM_IDS
     else:
         test_ids = sorted(TEST_REGISTRY.keys())
 
