@@ -1,0 +1,1956 @@
+{
+  "suite": "GIM-14 Validation",
+  "timestamp": "2026-03-16T21:37:32.064057+00:00",
+  "total_tests": 15,
+  "passed": 10,
+  "warned": 1,
+  "failed": 4,
+  "errors": 0,
+  "elapsed_seconds": 57.3,
+  "results": [
+    {
+      "test_id": "Q1",
+      "timestamp": "2026-03-16T21:36:39.888622+00:00",
+      "status": "PASS",
+      "metrics": {
+        "scale_factor_mean": 0.8295,
+        "scale_factor_std": 0.1209,
+        "scale_factor_cv": 0.1457,
+        "extreme_high_count": 0,
+        "extreme_low_count": 0,
+        "perturbation_bounded_count": 10,
+        "perturbation_total_count": 10
+      },
+      "flagged_items": [],
+      "notes": "Completed in 5.2s",
+      "details": {
+        "perturbation_results": [
+          {
+            "agent_id": "SGP",
+            "agent_name": "Singapore",
+            "direction": "up",
+            "scale_factor": 0.6439641446149372,
+            "baseline_gdp_t5": 0.5101,
+            "perturbed_gdp_t5": 0.5048,
+            "gdp_divergence_pct": 1.04
+          },
+          {
+            "agent_id": "SGP",
+            "agent_name": "Singapore",
+            "direction": "down",
+            "scale_factor": 0.6439641446149372,
+            "baseline_gdp_t5": 0.5101,
+            "perturbed_gdp_t5": 0.5179,
+            "gdp_divergence_pct": 1.53
+          },
+          {
+            "agent_id": "CHE",
+            "agent_name": "Switzerland",
+            "direction": "up",
+            "scale_factor": 0.6471530361714938,
+            "baseline_gdp_t5": 0.9922,
+            "perturbed_gdp_t5": 0.982,
+            "gdp_divergence_pct": 1.03
+          },
+          {
+            "agent_id": "CHE",
+            "agent_name": "Switzerland",
+            "direction": "down",
+            "scale_factor": 0.6471530361714938,
+            "baseline_gdp_t5": 0.9922,
+            "perturbed_gdp_t5": 1.0072,
+            "gdp_divergence_pct": 1.51
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "direction": "up",
+            "scale_factor": 0.6617345577683048,
+            "baseline_gdp_t5": 28.3267,
+            "perturbed_gdp_t5": 28.147,
+            "gdp_divergence_pct": 0.63
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "direction": "down",
+            "scale_factor": 0.6617345577683048,
+            "baseline_gdp_t5": 28.3267,
+            "perturbed_gdp_t5": 28.5931,
+            "gdp_divergence_pct": 0.94
+          },
+          {
+            "agent_id": "ISR",
+            "agent_name": "Israel",
+            "direction": "up",
+            "scale_factor": 0.6749566412565954,
+            "baseline_gdp_t5": 0.5398,
+            "perturbed_gdp_t5": 0.536,
+            "gdp_divergence_pct": 0.7
+          },
+          {
+            "agent_id": "ISR",
+            "agent_name": "Israel",
+            "direction": "down",
+            "scale_factor": 0.6749566412565954,
+            "baseline_gdp_t5": 0.5398,
+            "perturbed_gdp_t5": 0.5454,
+            "gdp_divergence_pct": 1.03
+          },
+          {
+            "agent_id": "COL",
+            "agent_name": "Colombia",
+            "direction": "up",
+            "scale_factor": 0.9823210116933038,
+            "baseline_gdp_t5": 0.3867,
+            "perturbed_gdp_t5": 0.384,
+            "gdp_divergence_pct": 0.69
+          },
+          {
+            "agent_id": "COL",
+            "agent_name": "Colombia",
+            "direction": "down",
+            "scale_factor": 0.9823210116933038,
+            "baseline_gdp_t5": 0.3867,
+            "perturbed_gdp_t5": 0.3906,
+            "gdp_divergence_pct": 1.02
+          }
+        ],
+        "conditions": {
+          "scale_factor_cv_lt_1": true,
+          "perturbation_bounded_80pct": true
+        }
+      }
+    },
+    {
+      "test_id": "Q2",
+      "timestamp": "2026-03-16T21:36:40.116278+00:00",
+      "status": "PASS",
+      "metrics": {
+        "damage_at_3C_pct": 5.393,
+        "peak_benefit_temperature": 0.7,
+        "peak_benefit_multiplier": 0.998728,
+        "zero_crossing_temperature": null,
+        "gdp_diff_benefit_vs_no_pct": 0.608,
+        "DAMAGE_QUAD_COEFF": 0.006,
+        "DAMAGE_BENEFIT_MAX": 0.006,
+        "DAMAGE_BENEFIT_PEAK": 0.3
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 0.2s",
+      "details": {
+        "damage_curve": [
+          {
+            "temperature_anomaly": 1.0,
+            "damage_multiplier": 0.997639,
+            "gdp_loss_pct": 0.236
+          },
+          {
+            "temperature_anomaly": 1.29,
+            "damage_multiplier": 0.995509,
+            "gdp_loss_pct": 0.449
+          },
+          {
+            "temperature_anomaly": 1.5,
+            "damage_multiplier": 0.9925,
+            "gdp_loss_pct": 0.75
+          },
+          {
+            "temperature_anomaly": 2.0,
+            "damage_multiplier": 0.979639,
+            "gdp_loss_pct": 2.036
+          },
+          {
+            "temperature_anomaly": 2.5,
+            "damage_multiplier": 0.963312,
+            "gdp_loss_pct": 3.669
+          },
+          {
+            "temperature_anomaly": 3.0,
+            "damage_multiplier": 0.946067,
+            "gdp_loss_pct": 5.393
+          },
+          {
+            "temperature_anomaly": 3.5,
+            "damage_multiplier": 0.926502,
+            "gdp_loss_pct": 7.35
+          },
+          {
+            "temperature_anomaly": 4.0,
+            "damage_multiplier": 0.904,
+            "gdp_loss_pct": 9.6
+          }
+        ],
+        "conditions": {
+          "damage_at_3C_ge_2pct": true,
+          "no_warming_preference": true
+        }
+      }
+    },
+    {
+      "test_id": "Q3",
+      "timestamp": "2026-03-16T21:36:40.118011+00:00",
+      "status": "PASS",
+      "metrics": {
+        "distinct_heuristic_profiles": 4,
+        "total_archetypes": 6
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 0.0s. LLM skipped.",
+      "details": {
+        "predicted_actions": {
+          "wealthy_democracy": {
+            "climate_policy": "weak",
+            "security_action": "none",
+            "mil_spending_direction": "flat_or_decrease"
+          },
+          "wealthy_autocracy": {
+            "climate_policy": "moderate",
+            "security_action": "military_exercise",
+            "mil_spending_direction": "flat_or_decrease"
+          },
+          "poor_fragile": {
+            "climate_policy": "none",
+            "security_action": "border_incident",
+            "mil_spending_direction": "increase"
+          },
+          "resource_rich_mena": {
+            "climate_policy": "moderate",
+            "security_action": "military_exercise",
+            "mil_spending_direction": "flat_or_decrease"
+          },
+          "rising_power": {
+            "climate_policy": "weak",
+            "security_action": "none",
+            "mil_spending_direction": "flat_or_decrease"
+          },
+          "small_open_economy": {
+            "climate_policy": "weak",
+            "security_action": "none",
+            "mil_spending_direction": "increase"
+          }
+        },
+        "llm_results": null,
+        "conditions": {
+          "heuristic_distinct_ge_4": true
+        }
+      }
+    },
+    {
+      "test_id": "Q4",
+      "timestamp": "2026-03-16T21:36:40.205472+00:00",
+      "status": "PASS",
+      "metrics": {
+        "stressed_agent": "C01",
+        "stressed_agent_name": "United States",
+        "gdp_divergence_t1_pct": 2.0,
+        "gdp_divergence_t2_pct": 2.124,
+        "gdp_divergence_t3_pct": 2.266,
+        "max_divergence_pct": 2.266,
+        "amplification_ratio": 1.13
+      },
+      "flagged_items": [],
+      "notes": "Completed in 0.1s. Proxy test: 2% GDP perturbation amplification.",
+      "details": {
+        "gdp_standard": [
+          27.2922,
+          27.2852,
+          29.0659,
+          31.7889
+        ],
+        "gdp_alt": [
+          27.838,
+          27.8309,
+          29.6833,
+          32.5091
+        ],
+        "conditions": {
+          "ordering_divergence_lt_10pct": true
+        }
+      }
+    },
+    {
+      "test_id": "Q5",
+      "timestamp": "2026-03-16T21:36:40.645835+00:00",
+      "status": "PASS",
+      "metrics": {
+        "min_ratio_for_3y_persistence": 1.5,
+        "DEBT_CRISIS_DEBT_MULT": 0.6,
+        "DEBT_CRISIS_GDP_MULT": 0.9,
+        "DEBT_CRISIS_EXIT_THRESHOLD": 0.7,
+        "onset_ratio_after_haircut_at_1.25": 0.8333
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 0.4s",
+      "details": {
+        "results_by_ratio": [
+          {
+            "initial_debt_gdp": 1.25,
+            "max_crisis_active_years": 0,
+            "persists_3y": false,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 1.25,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 1.3076,
+                "active_years": 0
+              },
+              {
+                "t": 2,
+                "debt_gdp": 1.2874,
+                "active_years": 0
+              },
+              {
+                "t": 3,
+                "debt_gdp": 1.2357,
+                "active_years": 0
+              },
+              {
+                "t": 4,
+                "debt_gdp": 1.1739,
+                "active_years": 0
+              },
+              {
+                "t": 5,
+                "debt_gdp": 1.113,
+                "active_years": 0
+              },
+              {
+                "t": 6,
+                "debt_gdp": 1.0551,
+                "active_years": 0
+              }
+            ]
+          },
+          {
+            "initial_debt_gdp": 1.5,
+            "max_crisis_active_years": 5,
+            "persists_3y": true,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 1.5,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 1.0385,
+                "active_years": 1
+              },
+              {
+                "t": 2,
+                "debt_gdp": 0.9673,
+                "active_years": 2
+              },
+              {
+                "t": 3,
+                "debt_gdp": 0.881,
+                "active_years": 3
+              },
+              {
+                "t": 4,
+                "debt_gdp": 0.7998,
+                "active_years": 4
+              },
+              {
+                "t": 5,
+                "debt_gdp": 0.7258,
+                "active_years": 5
+              },
+              {
+                "t": 6,
+                "debt_gdp": 0.6352,
+                "active_years": 0
+              }
+            ]
+          },
+          {
+            "initial_debt_gdp": 1.8,
+            "max_crisis_active_years": 6,
+            "persists_3y": true,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 1.8,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 1.2385,
+                "active_years": 1
+              },
+              {
+                "t": 2,
+                "debt_gdp": 1.1852,
+                "active_years": 2
+              },
+              {
+                "t": 3,
+                "debt_gdp": 1.1176,
+                "active_years": 3
+              },
+              {
+                "t": 4,
+                "debt_gdp": 1.052,
+                "active_years": 4
+              },
+              {
+                "t": 5,
+                "debt_gdp": 0.9913,
+                "active_years": 5
+              },
+              {
+                "t": 6,
+                "debt_gdp": 0.9281,
+                "active_years": 6
+              }
+            ]
+          },
+          {
+            "initial_debt_gdp": 2.0,
+            "max_crisis_active_years": 6,
+            "persists_3y": true,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 2.0,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 1.3719,
+                "active_years": 1
+              },
+              {
+                "t": 2,
+                "debt_gdp": 1.3241,
+                "active_years": 2
+              },
+              {
+                "t": 3,
+                "debt_gdp": 1.2722,
+                "active_years": 3
+              },
+              {
+                "t": 4,
+                "debt_gdp": 1.2237,
+                "active_years": 4
+              },
+              {
+                "t": 5,
+                "debt_gdp": 1.1804,
+                "active_years": 5
+              },
+              {
+                "t": 6,
+                "debt_gdp": 1.1411,
+                "active_years": 6
+              }
+            ]
+          },
+          {
+            "initial_debt_gdp": 2.5,
+            "max_crisis_active_years": 6,
+            "persists_3y": true,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 2.5,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 1.7052,
+                "active_years": 1
+              },
+              {
+                "t": 2,
+                "debt_gdp": 1.6316,
+                "active_years": 2
+              },
+              {
+                "t": 3,
+                "debt_gdp": 1.554,
+                "active_years": 3
+              },
+              {
+                "t": 4,
+                "debt_gdp": 1.4916,
+                "active_years": 4
+              },
+              {
+                "t": 5,
+                "debt_gdp": 1.4453,
+                "active_years": 5
+              },
+              {
+                "t": 6,
+                "debt_gdp": 1.4119,
+                "active_years": 6
+              }
+            ]
+          },
+          {
+            "initial_debt_gdp": 3.0,
+            "max_crisis_active_years": 6,
+            "persists_3y": true,
+            "trajectory": [
+              {
+                "t": 0,
+                "debt_gdp": 3.0,
+                "active_years": 0
+              },
+              {
+                "t": 1,
+                "debt_gdp": 2.0386,
+                "active_years": 1
+              },
+              {
+                "t": 2,
+                "debt_gdp": 1.9392,
+                "active_years": 2
+              },
+              {
+                "t": 3,
+                "debt_gdp": 1.8358,
+                "active_years": 3
+              },
+              {
+                "t": 4,
+                "debt_gdp": 1.7515,
+                "active_years": 4
+              },
+              {
+                "t": 5,
+                "debt_gdp": 1.687,
+                "active_years": 5
+              },
+              {
+                "t": 6,
+                "debt_gdp": 1.6381,
+                "active_years": 6
+              }
+            ]
+          }
+        ],
+        "conditions": {
+          "crisis_persists_near_threshold": true
+        }
+      }
+    },
+    {
+      "test_id": "Q6",
+      "timestamp": "2026-03-16T21:36:40.646586+00:00",
+      "status": "PASS",
+      "metrics": {
+        "baseline_status_quo_pct": 32.95,
+        "baseline_crisis_mass_pct": 54.31,
+        "compound_crisis_mass_pct": 74.14,
+        "single_extreme_crisis_mass_pct": 69.68,
+        "intercept_gap_sq_vs_broad": 1.55
+      },
+      "flagged_items": [
+        "",
+        ""
+      ],
+      "notes": "Completed in 0.0s",
+      "details": {
+        "baseline_probs": {
+          "status_quo": 0.3295,
+          "controlled_suppression": 0.1043,
+          "internal_destabilization": 0.0944,
+          "limited_proxy_escalation": 0.0992,
+          "maritime_chokepoint_crisis": 0.0854,
+          "direct_strike_exchange": 0.0898,
+          "broad_regional_escalation": 0.0699,
+          "negotiated_deescalation": 0.1274
+        },
+        "compound_probs": {
+          "status_quo": 0.1579,
+          "controlled_suppression": 0.1072,
+          "internal_destabilization": 0.1579,
+          "limited_proxy_escalation": 0.1199,
+          "maritime_chokepoint_crisis": 0.1502,
+          "direct_strike_exchange": 0.1411,
+          "broad_regional_escalation": 0.065,
+          "negotiated_deescalation": 0.1007
+        },
+        "single_extreme_probs": {
+          "status_quo": 0.2156,
+          "controlled_suppression": 0.0832,
+          "internal_destabilization": 0.0753,
+          "limited_proxy_escalation": 0.1836,
+          "maritime_chokepoint_crisis": 0.1012,
+          "direct_strike_exchange": 0.1746,
+          "broad_regional_escalation": 0.0789,
+          "negotiated_deescalation": 0.0876
+        },
+        "conditions": {
+          "compound_ge_single_crisis_mass": true,
+          "baseline_sq_lt_60pct": true
+        }
+      }
+    },
+    {
+      "test_id": "Q7",
+      "timestamp": "2026-03-16T21:36:40.890560+00:00",
+      "status": "PASS",
+      "metrics": {
+        "pair": "C01 -> C02",
+        "pre_shock_trade_intensity": 0.5,
+        "trough_trade_intensity": 0.4707,
+        "post_removal_trade_intensity": 0.4372,
+        "recovery_ratio": 0.8744
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 0.2s",
+      "details": {
+        "shock_trajectory": [
+          0.5,
+          0.48815,
+          0.47863,
+          0.47074,
+          0.46595,
+          0.46117,
+          0.4564,
+          0.45163,
+          0.44684,
+          0.44204,
+          0.4372
+        ],
+        "baseline_trajectory": [
+          0.5,
+          0.49503,
+          0.4901,
+          0.48521,
+          0.48033,
+          0.47548,
+          0.47063,
+          0.46577,
+          0.4609,
+          0.45601,
+          0.45108
+        ],
+        "conditions": {
+          "trade_recovers_80pct": true
+        }
+      }
+    },
+    {
+      "test_id": "Q8",
+      "timestamp": "2026-03-16T21:36:40.955846+00:00",
+      "status": "PASS",
+      "metrics": {
+        "initial_credit_zone": "investment",
+        "first_zone_worsen_step": null,
+        "first_rate_increase_step": null,
+        "estimated_lag_steps": null
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 0.1s. Step ordering: credit_rating at step 29, public_finances at step 21.",
+      "details": {
+        "step_records": [
+          {
+            "t": 0,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.0494,
+            "debt_gdp": 1.0
+          },
+          {
+            "t": 1,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.0504,
+            "debt_gdp": 1.0127
+          },
+          {
+            "t": 2,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.04527,
+            "debt_gdp": 0.9672
+          },
+          {
+            "t": 3,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.0374,
+            "debt_gdp": 0.8865
+          },
+          {
+            "t": 4,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.03061,
+            "debt_gdp": 0.8023
+          },
+          {
+            "t": 5,
+            "credit_zone": "investment",
+            "credit_rating": 5,
+            "effective_rate": 0.02555,
+            "debt_gdp": 0.7234
+          }
+        ],
+        "conditions": {
+          "lag_is_documented_or_zero": true
+        }
+      }
+    },
+    {
+      "test_id": "Q9",
+      "timestamp": "2026-03-16T21:36:40.964581+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "accuracy": 0.6,
+        "questions_passed": 3,
+        "total_questions": 5,
+        "silent_fallback_count": 1
+      },
+      "flagged_items": [
+        "Question failed: 'What if BRICS abandons the dollar?' \u2192 resolved ['United States', 'China', 'Germany']",
+        "Question failed: 'What happens if there is a drought crisis in Sub-Saharan Africa?' \u2192 resolved ['United States', 'China', 'Germany']"
+      ],
+      "notes": "Completed in 0.0s",
+      "details": {
+        "results": [
+          {
+            "question": "What if BRICS abandons the dollar?",
+            "expected_actors": [
+              "Brazil",
+              "Russia",
+              "India",
+              "China",
+              "South Africa"
+            ],
+            "resolved_actors": [
+              "United States",
+              "China",
+              "Germany"
+            ],
+            "unresolved": [],
+            "matched_count": 1,
+            "min_expected": 3,
+            "is_fallback": false,
+            "passed": false
+          },
+          {
+            "question": "How would a NATO-Russia confrontation over the Baltics unfold?",
+            "expected_actors": [
+              "United States",
+              "Russia",
+              "Germany",
+              "France",
+              "United Kingdom"
+            ],
+            "resolved_actors": [
+              "United States",
+              "Russia"
+            ],
+            "unresolved": [],
+            "matched_count": 2,
+            "min_expected": 2,
+            "is_fallback": false,
+            "passed": true
+          },
+          {
+            "question": "What happens if there is a drought crisis in Sub-Saharan Africa?",
+            "expected_actors": [
+              "Nigeria",
+              "South Africa",
+              "Kenya",
+              "Ethiopia"
+            ],
+            "resolved_actors": [
+              "United States",
+              "China",
+              "Germany"
+            ],
+            "unresolved": [],
+            "matched_count": 0,
+            "min_expected": 1,
+            "is_fallback": true,
+            "passed": false
+          },
+          {
+            "question": "What if North Korea tests a nuclear device?",
+            "expected_actors": [
+              "South Korea",
+              "Japan",
+              "China",
+              "United States"
+            ],
+            "resolved_actors": [
+              "United States",
+              "China",
+              "Germany"
+            ],
+            "unresolved": [],
+            "matched_count": 2,
+            "min_expected": 2,
+            "is_fallback": false,
+            "passed": true
+          },
+          {
+            "question": "How would OPEC production cuts affect global stability?",
+            "expected_actors": [
+              "Saudi Arabia",
+              "Russia",
+              "United States",
+              "Iran"
+            ],
+            "resolved_actors": [
+              "United States",
+              "China",
+              "Germany"
+            ],
+            "unresolved": [],
+            "matched_count": 1,
+            "min_expected": 1,
+            "is_fallback": false,
+            "passed": true
+          }
+        ],
+        "conditions": {
+          "accuracy_ge_60pct": true,
+          "no_silent_fallback": false
+        }
+      }
+    },
+    {
+      "test_id": "Q10",
+      "timestamp": "2026-03-16T21:36:41.518498+00:00",
+      "status": "PASS",
+      "metrics": {
+        "converged_50ep": true,
+        "converged_200ep": true,
+        "episodes_50": 1,
+        "episodes_200": 1,
+        "max_external_regret_50": 0.0,
+        "max_external_regret_200": 0.0,
+        "profile_stable": true
+      },
+      "flagged_items": [
+        "",
+        ""
+      ],
+      "notes": "Completed in 0.6s",
+      "details": {
+        "profile_50": {
+          "CHN": "accept_mediation",
+          "SAU": "accept_mediation",
+          "TUR": "backchannel_offer",
+          "USA": "accept_mediation"
+        },
+        "profile_200": {
+          "CHN": "accept_mediation",
+          "SAU": "accept_mediation",
+          "TUR": "backchannel_offer",
+          "USA": "accept_mediation"
+        },
+        "regret_50": {
+          "USA": 0.0,
+          "CHN": 0.0,
+          "SAU": 0.0,
+          "TUR": 0.0
+        },
+        "regret_200": {
+          "USA": 0.0,
+          "CHN": 0.0,
+          "SAU": 0.0,
+          "TUR": 0.0
+        },
+        "warnings_50": [],
+        "conditions": {
+          "profile_stable_50_vs_200": true,
+          "max_regret_200_lt_002": true
+        }
+      }
+    },
+    {
+      "test_id": "T1",
+      "timestamp": "2026-03-16T21:37:26.206776+00:00",
+      "status": "PASS",
+      "metrics": {
+        "total_perturbations": 120,
+        "max_amp_ratio": 1.09,
+        "mean_amp_ratio": 0.19,
+        "non_crisis_agents": 9,
+        "crisis_agents": 1,
+        "flagged_count": 0
+      },
+      "flagged_items": [],
+      "notes": "Completed in 44.7s. 120 perturbation runs.",
+      "details": {
+        "conditions": {
+          "non_crisis_amp_lt_5": true,
+          "crisis_amp_lt_15": true,
+          "no_extreme_gt_20": true
+        },
+        "sample_results": [
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.gdp",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 1.039,
+            "amp_ratio": 1.04,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.gdp",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 1.039,
+            "amp_ratio": 1.04,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.capital",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.038,
+            "amp_ratio": 0.04,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.capital",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.038,
+            "amp_ratio": 0.04,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.population",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.population",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "society.trust_gov",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "society.trust_gov",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "society.social_tension",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.006,
+            "amp_ratio": 0.01,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "society.social_tension",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.006,
+            "amp_ratio": 0.01,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.public_debt",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.0,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "USA",
+            "agent_name": "United States",
+            "field": "economy.public_debt",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.0,
+            "amp_ratio": 0.0,
+            "near_crisis": true,
+            "threshold": 15.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.gdp",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 1.039,
+            "amp_ratio": 1.04,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.gdp",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 1.039,
+            "amp_ratio": 1.04,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.capital",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.043,
+            "amp_ratio": 0.04,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.capital",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.043,
+            "amp_ratio": 0.04,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.population",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.004,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.population",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.004,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "society.trust_gov",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "society.trust_gov",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.002,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "society.social_tension",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.011,
+            "amp_ratio": 0.01,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "society.social_tension",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.011,
+            "amp_ratio": 0.01,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.public_debt",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.0,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "CHN",
+            "agent_name": "China",
+            "field": "economy.public_debt",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.0,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.gdp",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 1.055,
+            "amp_ratio": 1.05,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.gdp",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 1.054,
+            "amp_ratio": 1.05,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.capital",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.051,
+            "amp_ratio": 0.05,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.capital",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.052,
+            "amp_ratio": 0.05,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.population",
+            "direction": "up",
+            "gdp_divergence_t5_pct": 0.005,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          },
+          {
+            "agent_id": "DEU",
+            "agent_name": "Germany",
+            "field": "economy.population",
+            "direction": "down",
+            "gdp_divergence_t5_pct": 0.005,
+            "amp_ratio": 0.0,
+            "near_crisis": false,
+            "threshold": 5.0
+          }
+        ]
+      }
+    },
+    {
+      "test_id": "T2",
+      "timestamp": "2026-03-16T21:37:28.986875+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "top_priority_param": "SAVINGS_STABILITY_SENS",
+        "top_priority_max_S": 0.0887,
+        "responsive_param_count": 1,
+        "fragile_param_exists": false
+      },
+      "flagged_items": [
+        "SAVINGS_STABILITY_SENS: max|S|=0.089",
+        "DEBT_SPREAD_QUADRATIC: max|S|=0.034",
+        "TRUST_TENSION_SENS: max|S|=0.023"
+      ],
+      "notes": "Completed in 2.8s. 8 params \u00d7 5 points = 40 runs.",
+      "details": {
+        "sensitivity_matrix": {
+          "GINI_FISCAL_SENS": {
+            "sensitivity_index": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": -0.0,
+              "global_trust": -0.0,
+              "global_tension": -0.0,
+              "global_co2": -0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0
+          },
+          "CRISK_TEMP_SENSITIVITY": {
+            "sensitivity_index": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0
+          },
+          "STRUCTURAL_TRANSITION_POLICY_SENS": {
+            "sensitivity_index": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0
+          },
+          "DAMAGE_QUAD_COEFF": {
+            "sensitivity_index": {
+              "global_gdp": 0.0112,
+              "global_trust": 0.0001,
+              "global_tension": 0.0001,
+              "global_co2": 0.0003,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": -0.0075,
+              "global_trust": 0.0001,
+              "global_tension": -0.0001,
+              "global_co2": -0.0002,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0112
+          },
+          "TRUST_TENSION_SENS": {
+            "sensitivity_index": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0228,
+              "global_tension": 0.0051,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": -0.0,
+              "global_trust": -0.0164,
+              "global_tension": 0.0037,
+              "global_co2": -0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0228
+          },
+          "DEBT_SPREAD_QUADRATIC": {
+            "sensitivity_index": {
+              "global_gdp": 0.001,
+              "global_trust": 0.0241,
+              "global_tension": 0.0338,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": -0.0,
+              "global_trust": 0.0,
+              "global_tension": -0.0,
+              "global_co2": -0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0338
+          },
+          "EVENT_MAX_EXTRA_PROB": {
+            "sensitivity_index": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": 0.0,
+              "global_trust": 0.0,
+              "global_tension": 0.0,
+              "global_co2": 0.0,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0
+          },
+          "SAVINGS_STABILITY_SENS": {
+            "sensitivity_index": {
+              "global_gdp": 0.0887,
+              "global_trust": 0.0008,
+              "global_tension": 0.0009,
+              "global_co2": 0.0016,
+              "distressed_count": 0.0
+            },
+            "elasticity": {
+              "global_gdp": 0.0869,
+              "global_trust": -0.0008,
+              "global_tension": 0.0009,
+              "global_co2": 0.0016,
+              "distressed_count": 0.0
+            },
+            "max_sensitivity": 0.0887
+          }
+        },
+        "ranking": [
+          [
+            "SAVINGS_STABILITY_SENS",
+            0.0887
+          ],
+          [
+            "DEBT_SPREAD_QUADRATIC",
+            0.0338
+          ],
+          [
+            "TRUST_TENSION_SENS",
+            0.0228
+          ],
+          [
+            "DAMAGE_QUAD_COEFF",
+            0.0112
+          ],
+          [
+            "GINI_FISCAL_SENS",
+            0.0
+          ],
+          [
+            "CRISK_TEMP_SENSITIVITY",
+            0.0
+          ],
+          [
+            "STRUCTURAL_TRANSITION_POLICY_SENS",
+            0.0
+          ],
+          [
+            "EVENT_MAX_EXTRA_PROB",
+            0.0
+          ]
+        ],
+        "base_metrics": {
+          "global_gdp": 146.6275,
+          "global_trust": 0.5052,
+          "global_tension": 0.3352,
+          "global_co2": 3192.138,
+          "distressed_count": 0.0
+        },
+        "conditions": {
+          "no_fragile_gt_030": true,
+          "responsive_ge_3": false
+        }
+      }
+    },
+    {
+      "test_id": "T3",
+      "timestamp": "2026-03-16T21:37:31.853255+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "argentina_metrics_passed": 2,
+        "turkey_metrics_passed": 0,
+        "argentina_avg_active_years": 5.0,
+        "argentina_avg_gdp_loss_pct": 32.6,
+        "argentina_avg_gini_increase": 5.8,
+        "turkey_avg_gdppc_loss_pct": 0.0,
+        "turkey_avg_crisis_duration": 0.0,
+        "turkey_avg_trust_floor": 0.112
+      },
+      "flagged_items": [
+        "Argentina D2 FAIL: avg GDP loss = 32.6%",
+        "Turkey D6 FAIL: avg GDP/cap loss = 0.0%"
+      ],
+      "notes": "Completed in 2.9s",
+      "details": {
+        "argentina": {
+          "agent_id": "ARG",
+          "runs": [
+            {
+              "seed": 42,
+              "max_crisis_active_years": 5,
+              "cum_gdp_loss_pct": 32.6,
+              "gini_increase": 5.8,
+              "recovery_year": null
+            },
+            {
+              "seed": 43,
+              "max_crisis_active_years": 5,
+              "cum_gdp_loss_pct": 32.6,
+              "gini_increase": 5.8,
+              "recovery_year": null
+            },
+            {
+              "seed": 44,
+              "max_crisis_active_years": 5,
+              "cum_gdp_loss_pct": 32.6,
+              "gini_increase": 5.8,
+              "recovery_year": null
+            }
+          ],
+          "avg_max_active_years": 5.0,
+          "avg_cum_gdp_loss_pct": 32.6,
+          "avg_gini_increase": 5.8,
+          "D1_pass": true,
+          "D2_pass": false,
+          "D3_pass": true
+        },
+        "turkey": {
+          "agent_id": "TUR",
+          "runs": [
+            {
+              "seed": 42,
+              "max_gdppc_loss_pct": 0,
+              "crisis_duration": 0,
+              "trust_floor": 0.112
+            },
+            {
+              "seed": 43,
+              "max_gdppc_loss_pct": 0,
+              "crisis_duration": 0,
+              "trust_floor": 0.112
+            },
+            {
+              "seed": 44,
+              "max_gdppc_loss_pct": 0,
+              "crisis_duration": 0,
+              "trust_floor": 0.112
+            }
+          ],
+          "avg_max_gdppc_loss_pct": 0.0,
+          "avg_crisis_duration": 0.0,
+          "avg_trust_floor": 0.112,
+          "D5_pass": false,
+          "D6_pass": false,
+          "D7_pass": false
+        },
+        "conditions": {
+          "argentina_3of4": true,
+          "turkey_2of3": false
+        }
+      }
+    },
+    {
+      "test_id": "T4",
+      "timestamp": "2026-03-16T21:37:31.985169+00:00",
+      "status": "WARN",
+      "metrics": {
+        "n_pairs": 420,
+        "trust_asym_t10_mean": 0.0525,
+        "trust_asym_t10_max": 0.3792,
+        "trade_median_decay_ratio": 0.8986,
+        "trade_frac_below_05": 0.0,
+        "mean_trust_drift_10y": -0.04941,
+        "mean_conflict_drift_10y": 0.09792
+      },
+      "flagged_items": [
+        "",
+        "Trust asymmetry max = 0.379"
+      ],
+      "notes": "Completed in 0.1s. 420 directed pairs.",
+      "details": {
+        "asymmetry_by_snapshot": {
+          "t0": {
+            "trust_mean": 0.0,
+            "trust_max": 0.0,
+            "trust_p90": 0.0,
+            "conflict_mean": 0.0,
+            "conflict_max": 0.0,
+            "conflict_p90": 0.0,
+            "trade_intensity_mean": 0.0,
+            "trade_intensity_max": 0.0,
+            "trade_intensity_p90": 0.0
+          },
+          "t5": {
+            "trust_mean": 0.0138,
+            "trust_max": 0.1124,
+            "trust_p90": 0.0493,
+            "conflict_mean": 0.0929,
+            "conflict_max": 0.7244,
+            "conflict_p90": 0.3264,
+            "trade_intensity_mean": 0.0035,
+            "trade_intensity_max": 0.0285,
+            "trade_intensity_p90": 0.0124
+          },
+          "t10": {
+            "trust_mean": 0.0525,
+            "trust_max": 0.3792,
+            "trust_p90": 0.1854,
+            "conflict_mean": 0.178,
+            "conflict_max": 0.8935,
+            "conflict_p90": 0.6387,
+            "trade_intensity_mean": 0.0151,
+            "trade_intensity_max": 0.1118,
+            "trade_intensity_p90": 0.0529
+          }
+        },
+        "trade_decay_distribution": {
+          "min": 0.6622,
+          "p10": 0.8577,
+          "median": 0.8986,
+          "p90": 0.9061,
+          "max": 0.908
+        },
+        "conditions": {
+          "trust_asym_mean_lt_010": true,
+          "trust_asym_max_lt_025": false,
+          "trade_median_decay_gt_070": true,
+          "trade_extreme_decay_lt_10pct": true
+        }
+      }
+    },
+    {
+      "test_id": "T5",
+      "timestamp": "2026-03-16T21:37:32.063829+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "total_cases": 16,
+        "accuracy": 0.75,
+        "v2_accuracy": 0.2,
+        "criticality_gap": 0.1567,
+        "avg_crisis_non_sq_mass": 0.8929,
+        "avg_stable_non_sq_mass": 0.76,
+        "perturbation_flip_rate": 0.0,
+        "perturbation_flips": 0,
+        "perturbation_total": 36
+      },
+      "flagged_items": [
+        "Accuracy = 75% (threshold: \u226580%)",
+        ""
+      ],
+      "notes": "Completed in 0.1s. 11 v1 + 5 v2 cases.",
+      "details": {
+        "v1_results": [
+          {
+            "case_id": "argentina_debt_2023",
+            "dominant_label": "internal_destabilization",
+            "probabilities": {
+              "status_quo": 0.1328,
+              "controlled_suppression": 0.2007,
+              "internal_destabilization": 0.2925,
+              "limited_proxy_escalation": 0.0877,
+              "maritime_chokepoint_crisis": 0.0646,
+              "direct_strike_exchange": 0.1041,
+              "broad_regional_escalation": 0.0615,
+              "negotiated_deescalation": 0.0562
+            },
+            "criticality_score": 0.6038,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8672,
+            "expected_labels": [
+              "internal_destabilization",
+              "controlled_suppression"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "australia_stability_2023",
+            "dominant_label": "status_quo",
+            "probabilities": {
+              "status_quo": 0.2406,
+              "controlled_suppression": 0.1136,
+              "internal_destabilization": 0.1113,
+              "limited_proxy_escalation": 0.1099,
+              "maritime_chokepoint_crisis": 0.0726,
+              "direct_strike_exchange": 0.1495,
+              "broad_regional_escalation": 0.0781,
+              "negotiated_deescalation": 0.1244
+            },
+            "criticality_score": 0.4868,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.7594,
+            "expected_labels": [
+              "status_quo"
+            ],
+            "match": true,
+            "is_stable": true
+          },
+          {
+            "case_id": "canada_stability_2023",
+            "dominant_label": "status_quo",
+            "probabilities": {
+              "status_quo": 0.2355,
+              "controlled_suppression": 0.1133,
+              "internal_destabilization": 0.1212,
+              "limited_proxy_escalation": 0.1098,
+              "maritime_chokepoint_crisis": 0.0759,
+              "direct_strike_exchange": 0.1467,
+              "broad_regional_escalation": 0.0773,
+              "negotiated_deescalation": 0.1202
+            },
+            "criticality_score": 0.4995,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.7645,
+            "expected_labels": [
+              "status_quo"
+            ],
+            "match": true,
+            "is_stable": true
+          },
+          {
+            "case_id": "europe_sanctions_2022",
+            "dominant_label": "internal_destabilization",
+            "probabilities": {
+              "status_quo": 0.1248,
+              "controlled_suppression": 0.1327,
+              "internal_destabilization": 0.1821,
+              "limited_proxy_escalation": 0.1437,
+              "maritime_chokepoint_crisis": 0.1032,
+              "direct_strike_exchange": 0.1398,
+              "broad_regional_escalation": 0.1087,
+              "negotiated_deescalation": 0.065
+            },
+            "criticality_score": 0.6228,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8752,
+            "expected_labels": [
+              "internal_destabilization",
+              "limited_proxy_escalation"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "middle_east_escalation_2024",
+            "dominant_label": "limited_proxy_escalation",
+            "probabilities": {
+              "status_quo": 0.0957,
+              "controlled_suppression": 0.1,
+              "internal_destabilization": 0.1148,
+              "limited_proxy_escalation": 0.2147,
+              "maritime_chokepoint_crisis": 0.0889,
+              "direct_strike_exchange": 0.1797,
+              "broad_regional_escalation": 0.1612,
+              "negotiated_deescalation": 0.0451
+            },
+            "criticality_score": 0.6694,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.9043,
+            "expected_labels": [
+              "limited_proxy_escalation",
+              "direct_strike_exchange"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "norway_stability_2023",
+            "dominant_label": "status_quo",
+            "probabilities": {
+              "status_quo": 0.252,
+              "controlled_suppression": 0.1089,
+              "internal_destabilization": 0.1162,
+              "limited_proxy_escalation": 0.1045,
+              "maritime_chokepoint_crisis": 0.0782,
+              "direct_strike_exchange": 0.1324,
+              "broad_regional_escalation": 0.0739,
+              "negotiated_deescalation": 0.1339
+            },
+            "criticality_score": 0.4709,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.748,
+            "expected_labels": [
+              "status_quo"
+            ],
+            "match": true,
+            "is_stable": true
+          },
+          {
+            "case_id": "pakistan_instability_2023",
+            "dominant_label": "internal_destabilization",
+            "probabilities": {
+              "status_quo": 0.0778,
+              "controlled_suppression": 0.2121,
+              "internal_destabilization": 0.3314,
+              "limited_proxy_escalation": 0.0854,
+              "maritime_chokepoint_crisis": 0.0975,
+              "direct_strike_exchange": 0.1042,
+              "broad_regional_escalation": 0.0606,
+              "negotiated_deescalation": 0.0311
+            },
+            "criticality_score": 0.6572,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.9222,
+            "expected_labels": [
+              "internal_destabilization",
+              "controlled_suppression"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "red_sea_maritime_2024",
+            "dominant_label": "maritime_chokepoint_crisis",
+            "probabilities": {
+              "status_quo": 0.1065,
+              "controlled_suppression": 0.1054,
+              "internal_destabilization": 0.1181,
+              "limited_proxy_escalation": 0.1114,
+              "maritime_chokepoint_crisis": 0.1825,
+              "direct_strike_exchange": 0.1777,
+              "broad_regional_escalation": 0.1423,
+              "negotiated_deescalation": 0.056
+            },
+            "criticality_score": 0.6618,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8935,
+            "expected_labels": [
+              "maritime_chokepoint_crisis",
+              "direct_strike_exchange"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "switzerland_stability_2023",
+            "dominant_label": "status_quo",
+            "probabilities": {
+              "status_quo": 0.2321,
+              "controlled_suppression": 0.1052,
+              "internal_destabilization": 0.1029,
+              "limited_proxy_escalation": 0.0969,
+              "maritime_chokepoint_crisis": 0.1402,
+              "direct_strike_exchange": 0.1261,
+              "broad_regional_escalation": 0.0693,
+              "negotiated_deescalation": 0.1274
+            },
+            "criticality_score": 0.4796,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.7679,
+            "expected_labels": [
+              "status_quo"
+            ],
+            "match": true,
+            "is_stable": true
+          },
+          {
+            "case_id": "taiwan_strait_2024",
+            "dominant_label": "maritime_chokepoint_crisis",
+            "probabilities": {
+              "status_quo": 0.1239,
+              "controlled_suppression": 0.0972,
+              "internal_destabilization": 0.0952,
+              "limited_proxy_escalation": 0.0979,
+              "maritime_chokepoint_crisis": 0.2333,
+              "direct_strike_exchange": 0.1628,
+              "broad_regional_escalation": 0.1208,
+              "negotiated_deescalation": 0.0689
+            },
+            "criticality_score": 0.6296,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8761,
+            "expected_labels": [
+              "maritime_chokepoint_crisis"
+            ],
+            "match": true,
+            "is_stable": false
+          },
+          {
+            "case_id": "turkiye_fx_regime_2023",
+            "dominant_label": "internal_destabilization",
+            "probabilities": {
+              "status_quo": 0.0879,
+              "controlled_suppression": 0.2075,
+              "internal_destabilization": 0.2799,
+              "limited_proxy_escalation": 0.0808,
+              "maritime_chokepoint_crisis": 0.1391,
+              "direct_strike_exchange": 0.1082,
+              "broad_regional_escalation": 0.0599,
+              "negotiated_deescalation": 0.0367
+            },
+            "criticality_score": 0.642,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.9121,
+            "expected_labels": [
+              "internal_destabilization",
+              "controlled_suppression"
+            ],
+            "match": true,
+            "is_stable": false
+          }
+        ],
+        "v2_results": [
+          {
+            "case_id": "argentina_default_2001",
+            "dominant_label": "internal_destabilization",
+            "probabilities": {
+              "status_quo": 0.1565,
+              "controlled_suppression": 0.1276,
+              "internal_destabilization": 0.1964,
+              "limited_proxy_escalation": 0.1328,
+              "maritime_chokepoint_crisis": 0.0885,
+              "direct_strike_exchange": 0.1426,
+              "broad_regional_escalation": 0.086,
+              "negotiated_deescalation": 0.0696
+            },
+            "criticality_score": 0.5966,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8435,
+            "expected_labels": [
+              "internal_destabilization"
+            ],
+            "match": true
+          },
+          {
+            "case_id": "brazil_lula_crisis_2002",
+            "dominant_label": "direct_strike_exchange",
+            "probabilities": {
+              "status_quo": 0.1302,
+              "controlled_suppression": 0.1171,
+              "internal_destabilization": 0.1525,
+              "limited_proxy_escalation": 0.1312,
+              "maritime_chokepoint_crisis": 0.0789,
+              "direct_strike_exchange": 0.1577,
+              "broad_regional_escalation": 0.0862,
+              "negotiated_deescalation": 0.146
+            },
+            "criticality_score": 0.5906,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8698,
+            "expected_labels": [
+              "negotiated_deescalation"
+            ],
+            "match": false
+          },
+          {
+            "case_id": "france_gilets_jaunes_2018",
+            "dominant_label": "direct_strike_exchange",
+            "probabilities": {
+              "status_quo": 0.1638,
+              "controlled_suppression": 0.102,
+              "internal_destabilization": 0.1349,
+              "limited_proxy_escalation": 0.1185,
+              "maritime_chokepoint_crisis": 0.1444,
+              "direct_strike_exchange": 0.1669,
+              "broad_regional_escalation": 0.0852,
+              "negotiated_deescalation": 0.0843
+            },
+            "criticality_score": 0.5866,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8362,
+            "expected_labels": [
+              "status_quo"
+            ],
+            "match": false
+          },
+          {
+            "case_id": "south_korea_imf_1997",
+            "dominant_label": "maritime_chokepoint_crisis",
+            "probabilities": {
+              "status_quo": 0.1075,
+              "controlled_suppression": 0.1034,
+              "internal_destabilization": 0.1289,
+              "limited_proxy_escalation": 0.1062,
+              "maritime_chokepoint_crisis": 0.2063,
+              "direct_strike_exchange": 0.1506,
+              "broad_regional_escalation": 0.0766,
+              "negotiated_deescalation": 0.1204
+            },
+            "criticality_score": 0.6144,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8925,
+            "expected_labels": [
+              "negotiated_deescalation"
+            ],
+            "match": false
+          },
+          {
+            "case_id": "turkey_fx_crisis_2018",
+            "dominant_label": "maritime_chokepoint_crisis",
+            "probabilities": {
+              "status_quo": 0.1048,
+              "controlled_suppression": 0.1403,
+              "internal_destabilization": 0.1557,
+              "limited_proxy_escalation": 0.1237,
+              "maritime_chokepoint_crisis": 0.1927,
+              "direct_strike_exchange": 0.1499,
+              "broad_regional_escalation": 0.0846,
+              "negotiated_deescalation": 0.0483
+            },
+            "criticality_score": 0.6377,
+            "calibration_score": 1.0,
+            "non_sq_mass": 0.8952,
+            "expected_labels": [
+              "internal_destabilization"
+            ],
+            "match": false
+          }
+        ],
+        "conditions": {
+          "accuracy_ge_080": false,
+          "crit_gap_gt_015": true,
+          "crisis_nonsq_gt_040": true,
+          "stable_nonsq_lt_030": false,
+          "v2_accuracy_ge_080": false,
+          "flip_rate_lt_015": true
+        }
+      }
+    }
+  ]
+}
