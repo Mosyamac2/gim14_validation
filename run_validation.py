@@ -25,9 +25,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # Ensure project root is on path
-PROJECT_ROOT = Path(__file__).resolve().parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parent      # .../GIM-14/gim14_validation/
+PARENT_OF_PROJECT = PROJECT_ROOT.parent             # .../GIM-14/
+sys.path.insert(0, str(PARENT_OF_PROJECT))          # now `import gim14_validation` works
 
 
 # ---------------------------------------------------------------------------

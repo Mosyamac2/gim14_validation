@@ -68,12 +68,14 @@ _load_dotenv()
 
 def _import_gim():
     """Import GIM-14 core modules and return them as a namespace dict."""
+    # Import submodules directly — avoid triggering gim.core.__init__ with
+    # a bare `import gim.core.calibration_params` which collides with the
+    # `from .core import *` re-export in __init__.py.
     from gim.core.world_factory import make_world_from_csv
     from gim.core.simulation import step_world
     from gim.core.policy import make_policy_map, simple_rule_based_policy
     from gim.core.core import WorldState, AgentState, RelationState
     from gim.paths import DEFAULT_STATE_CSV, OPERATIONAL_STATE_CSV
-    import gim.core.calibration_params as cal
     return {
         "make_world_from_csv": make_world_from_csv,
         "step_world": step_world,
@@ -84,7 +86,6 @@ def _import_gim():
         "RelationState": RelationState,
         "DEFAULT_STATE_CSV": DEFAULT_STATE_CSV,
         "OPERATIONAL_STATE_CSV": OPERATIONAL_STATE_CSV,
-        "cal": cal,
     }
 
 
@@ -98,6 +99,27 @@ def gim():
     if _gim_cache is None:
         _gim_cache = _import_gim()
     return _gim_cache
+
+
+# Lazy accessor for calibration_params — must be imported AFTER gim.core
+# is fully initialized, not during _import_gim().
+_cal_cache = None
+
+
+def get_cal():
+    """Return gim.core.calibration_params (lazy, cached)."""
+    global _cal_cache
+    if _cal_cache is None:
+        # By this point gim.core is fully loaded, so the submodule
+        # is already in sys.modules from the internal import chain.
+        import sys
+        _cal_cache = sys.modules.get("gim.core.calibration_params")
+        if _cal_cache is None:
+            # Fallback: force-import after gim.core is ready
+            gim()  # ensure gim.core is initialized
+            import importlib
+            _cal_cache = importlib.import_module("gim.core.calibration_params")
+    return _cal_cache
 
 
 # ---------------------------------------------------------------------------
@@ -212,13 +234,13 @@ class ParamPatch:
         self._original: float | None = None
 
     def __enter__(self):
-        cal = gim()["cal"]
+        cal = get_cal()
         self._original = getattr(cal, self.name)
         setattr(cal, self.name, self.value)
         return self
 
     def __exit__(self, *exc):
-        cal = gim()["cal"]
+        cal = get_cal()
         setattr(cal, self.name, self._original)
 
 

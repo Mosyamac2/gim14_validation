@@ -5,7 +5,7 @@ Evaluate the damage multiplier curve at model-relevant temperatures
 and compare against literature references.
 """
 from __future__ import annotations
-from ..helpers import gim, load_compact_world, run_steps, make_result, determine_status, Timer
+from ..helpers import gim, get_cal, load_compact_world, run_steps, make_result, determine_status, Timer
 
 
 def run(*, verbose: bool = False) -> dict:
@@ -13,7 +13,7 @@ def run(*, verbose: bool = False) -> dict:
         g = gim()
         from gim.core.climate import climate_damage_multiplier, effective_damage_multiplier
         from gim.core.core import TGLOBAL_2023_C
-        cal = g["cal"]
+        cal = get_cal()
 
         # ------------------------------------------------------------------
         # Step 1: Evaluate damage curve at key temperatures

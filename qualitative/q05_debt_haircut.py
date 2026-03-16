@@ -8,14 +8,14 @@ realistic initial debt/GDP ratios.
 from __future__ import annotations
 import copy
 from ..helpers import (
-    gim, load_compact_world, run_steps, make_result, determine_status, Timer,
+    gim, get_cal, load_compact_world, run_steps, make_result, determine_status, Timer,
 )
 
 
 def run(*, verbose: bool = False) -> dict:
     with Timer() as t:
         world_base = load_compact_world()
-        cal = gim()["cal"]
+        cal = get_cal()
 
         # Pick an agent to stress
         test_agent_id = list(world_base.agents.keys())[0]

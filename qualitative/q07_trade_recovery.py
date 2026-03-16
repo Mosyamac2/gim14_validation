@@ -25,8 +25,8 @@ def run(*, verbose: bool = False) -> dict:
         # ------------------------------------------------------------------
         traj_baseline = run_steps(world_base, years=10, seed=42)
         baseline_ti = [
-            traj_baseline[t].relations[a_id][b_id].trade_intensity
-            for t in range(11)
+            traj_baseline[i].relations[a_id][b_id].trade_intensity
+            for i in range(11)
         ]
 
         # ------------------------------------------------------------------
@@ -49,10 +49,10 @@ def run(*, verbose: bool = False) -> dict:
 
         # Assemble full shocked trajectory
         shock_ti = []
-        for t in range(4):  # t=0..3
-            shock_ti.append(traj_phase1[t].relations[a_id][b_id].trade_intensity)
-        for t in range(1, 8):  # t=4..10
-            shock_ti.append(traj_phase2[t].relations[a_id][b_id].trade_intensity)
+        for i in range(4):  # t=0..3
+            shock_ti.append(traj_phase1[i].relations[a_id][b_id].trade_intensity)
+        for i in range(1, 8):  # t=4..10
+            shock_ti.append(traj_phase2[i].relations[a_id][b_id].trade_intensity)
 
         # ------------------------------------------------------------------
         # Assess recovery

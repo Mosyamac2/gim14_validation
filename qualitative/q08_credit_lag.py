@@ -7,14 +7,14 @@ a 0-year or 1-year lag due to step ordering.
 from __future__ import annotations
 import copy
 from ..helpers import (
-    gim, load_compact_world, run_steps, make_result, determine_status, Timer,
+    gim, get_cal, load_compact_world, run_steps, make_result, determine_status, Timer,
 )
 
 
 def run(*, verbose: bool = False) -> dict:
     with Timer() as t:
         world_base = load_compact_world()
-        cal = gim()["cal"]
+        cal = get_cal()
         from gim.core.economy import compute_effective_interest_rate
 
         # Pick an agent and stress it
