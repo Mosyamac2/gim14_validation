@@ -63,6 +63,34 @@ _load_dotenv()
 
 
 # ---------------------------------------------------------------------------
+# Patch GIM-14 LLM endpoint if custom URL/model are configured.
+# This allows using OpenRouter or any OpenAI-compatible API without
+# modifying GIM-14 source code.
+#
+# Set in .env:
+#   LLM_API_URL=https://openrouter.ai/api/v1/chat/completions
+#   LLM_MODEL=deepseek/deepseek-chat
+# ---------------------------------------------------------------------------
+def _patch_llm_endpoint():
+    """
+    If LLM_API_URL or LLM_MODEL are set (via .env or environment),
+    monkey-patch gim.core.policy so call_llm() hits the right endpoint.
+    """
+    custom_url = os.environ.get("LLM_API_URL", "").strip()
+    custom_model = os.environ.get("LLM_MODEL", "").strip()
+    if not custom_url and not custom_model:
+        return
+    # Use sys.modules to avoid the gim.core.__init__ import collision
+    policy_mod = sys.modules.get("gim.core.policy")
+    if policy_mod is None:
+        return  # not yet loaded; will be patched on next call
+    if custom_url:
+        policy_mod.DEEPSEEK_API_URL = custom_url
+    if custom_model:
+        policy_mod.DEEPSEEK_MODEL = custom_model
+
+
+# ---------------------------------------------------------------------------
 # GIM-14 imports (lazy, so import errors are reported at call-time)
 # ---------------------------------------------------------------------------
 
@@ -76,6 +104,8 @@ def _import_gim():
     from gim.core.policy import make_policy_map, simple_rule_based_policy
     from gim.core.core import WorldState, AgentState, RelationState
     from gim.paths import DEFAULT_STATE_CSV, OPERATIONAL_STATE_CSV
+    # Now that gim.core.policy is loaded, apply the endpoint patch
+    _patch_llm_endpoint()
     return {
         "make_world_from_csv": make_world_from_csv,
         "step_world": step_world,
@@ -179,6 +209,7 @@ def require_api_key() -> str:
             "Copy .env.example to .env and fill in your key, "
             "or export DEEPSEEK_API_KEY=sk-..."
         )
+    _patch_llm_endpoint()  # ensure OpenRouter/custom endpoint is wired
     return key
 
 
@@ -193,6 +224,7 @@ def run_steps_llm(world, years: int = 3, seed: int = 42,
     """
     require_api_key()
     g = gim()
+    _patch_llm_endpoint()  # ensure custom URL/model is applied even if gim() was cached
 
     os.environ["SIM_SEED"] = str(seed)
     os.environ.pop("NO_LLM", None)              # enable LLM

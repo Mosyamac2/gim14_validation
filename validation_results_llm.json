@@ -1,0 +1,642 @@
+{
+  "suite": "GIM-14 Validation",
+  "timestamp": "2026-03-17T00:50:24.721975+00:00",
+  "total_tests": 6,
+  "passed": 4,
+  "warned": 0,
+  "failed": 2,
+  "errors": 0,
+  "elapsed_seconds": 5910.4,
+  "results": [
+    {
+      "test_id": "Q11",
+      "timestamp": "2026-03-16T23:23:45.351962+00:00",
+      "status": "PASS",
+      "metrics": {
+        "mean_inter_archetype_distance": 1.435,
+        "mean_intra_archetype_distance": 0.6809,
+        "discrimination_ratio": 2.107,
+        "distinct_modal_climate_policies": 2,
+        "archetype_sizes": {
+          "high_income_demo": 12,
+          "low_autocratic": 5,
+          "middle_hybrid": 4
+        },
+        "archetype_modal_climate": {
+          "high_income_demo": "moderate",
+          "low_autocratic": "none",
+          "middle_hybrid": "none"
+        },
+        "total_action_log_rows": 63
+      },
+      "flagged_items": [
+        ""
+      ],
+      "notes": "Completed in 711.0s. 63 action-log rows.",
+      "details": {
+        "archetype_centroids": {
+          "high_income_demo": [
+            0.0833,
+            0.0,
+            0.9167,
+            0.0,
+            0.5161,
+            0.4615,
+            0.0,
+            0.375
+          ],
+          "low_autocratic": [
+            0.4667,
+            0.2,
+            0.3333,
+            0.0,
+            0.4782,
+            0.4503,
+            0.0,
+            0.3333
+          ],
+          "middle_hybrid": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.4897,
+            0.4898,
+            0.0,
+            0.3333
+          ]
+        },
+        "conditions": {
+          "discrimination_ratio_gt_1.5": true,
+          "distinct_climate_ge_2": true
+        }
+      }
+    },
+    {
+      "test_id": "Q12",
+      "timestamp": "2026-03-16T23:44:44.099687+00:00",
+      "status": "PASS",
+      "metrics": {
+        "total_llm_calls": 63,
+        "successes": 63,
+        "fallbacks": 0,
+        "fallback_rate": 0.0,
+        "fallback_agent_count": 0,
+        "max_fallbacks_per_agent": 0,
+        "avg_gdp_growth_fallback": null,
+        "avg_gdp_growth_nonfallback": 0.1992,
+        "gdp_growth_gap": null
+      },
+      "flagged_items": [
+        "",
+        ""
+      ],
+      "notes": "Completed in 1258.7s. Errors: 0.",
+      "details": {
+        "fallback_agents": {},
+        "errors": [],
+        "conditions": {
+          "fallback_rate_lt_010": true,
+          "no_agent_gt_1_fallback": true
+        }
+      }
+    },
+    {
+      "test_id": "T6",
+      "timestamp": "2026-03-16T23:48:29.188663+00:00",
+      "status": "PASS",
+      "metrics": {
+        "total_violations": 0,
+        "violations_by_rule": {
+          "B1": 0,
+          "B2": 0,
+          "B3": 0,
+          "B4": 0,
+          "B5": 0,
+          "B6": 0
+        },
+        "n_agents": 21,
+        "n_steps": 3,
+        "total_agent_steps": 63,
+        "action_log_rows": 63
+      },
+      "flagged_items": [],
+      "notes": "Completed in 225.1s.",
+      "details": {
+        "violations": [],
+        "conditions": {
+          "total_violations_lt_3": true,
+          "no_stable_b1": true
+        }
+      }
+    },
+    {
+      "test_id": "T7",
+      "timestamp": "2026-03-17T00:15:37.464599+00:00",
+      "status": "PASS",
+      "metrics": {
+        "mean_gdp_divergence": 0.00169,
+        "max_gdp_divergence": 0.00946,
+        "mean_trust_divergence": 0.00261,
+        "mean_tension_divergence": 0.0005,
+        "action_match_rate": 0.667,
+        "matched_action_steps": 42,
+        "total_action_steps": 63
+      },
+      "flagged_items": [
+        "",
+        ""
+      ],
+      "notes": "Completed in 1628.3s. 2 runs \u00d7 30 LLM calls = ~60 calls.",
+      "details": {
+        "agent_details": [
+          {
+            "agent_id": "C01",
+            "name": "United States",
+            "gdp_divergence": 0.00832,
+            "trust_divergence": 0.00078,
+            "tension_divergence": 0.00053
+          },
+          {
+            "agent_id": "C02",
+            "name": "China",
+            "gdp_divergence": 0.00946,
+            "trust_divergence": 0.00012,
+            "tension_divergence": 0.00014
+          },
+          {
+            "agent_id": "C03",
+            "name": "Japan",
+            "gdp_divergence": 0.00033,
+            "trust_divergence": 0.00857,
+            "tension_divergence": 0.00122
+          },
+          {
+            "agent_id": "C04",
+            "name": "Germany",
+            "gdp_divergence": 0.00203,
+            "trust_divergence": 0.00074,
+            "tension_divergence": 0.00053
+          },
+          {
+            "agent_id": "C05",
+            "name": "India",
+            "gdp_divergence": 0.00018,
+            "trust_divergence": 0.00491,
+            "tension_divergence": 0.00159
+          },
+          {
+            "agent_id": "C06",
+            "name": "United Kingdom",
+            "gdp_divergence": 0.00075,
+            "trust_divergence": 0.00083,
+            "tension_divergence": 0.00044
+          },
+          {
+            "agent_id": "C07",
+            "name": "France",
+            "gdp_divergence": 0.0031,
+            "trust_divergence": 0.00051,
+            "tension_divergence": 0.00049
+          },
+          {
+            "agent_id": "C08",
+            "name": "Italy",
+            "gdp_divergence": 0.00071,
+            "trust_divergence": 6e-05,
+            "tension_divergence": 6e-05
+          },
+          {
+            "agent_id": "C09",
+            "name": "Brazil",
+            "gdp_divergence": 0.00017,
+            "trust_divergence": 0.00082,
+            "tension_divergence": 0.00062
+          },
+          {
+            "agent_id": "C10",
+            "name": "Canada",
+            "gdp_divergence": 0.00031,
+            "trust_divergence": 0.00018,
+            "tension_divergence": 1e-05
+          },
+          {
+            "agent_id": "C11",
+            "name": "South Korea",
+            "gdp_divergence": 0.00013,
+            "trust_divergence": 7e-05,
+            "tension_divergence": 0.00018
+          },
+          {
+            "agent_id": "C12",
+            "name": "Russia",
+            "gdp_divergence": 0.00053,
+            "trust_divergence": 0.00702,
+            "tension_divergence": 0.00042
+          },
+          {
+            "agent_id": "C13",
+            "name": "Australia",
+            "gdp_divergence": 0.00216,
+            "trust_divergence": 9e-05,
+            "tension_divergence": 1e-05
+          },
+          {
+            "agent_id": "C14",
+            "name": "Spain",
+            "gdp_divergence": 0.0,
+            "trust_divergence": 0.00073,
+            "tension_divergence": 0.00011
+          },
+          {
+            "agent_id": "C15",
+            "name": "Mexico",
+            "gdp_divergence": 0.00022,
+            "trust_divergence": 0.01209,
+            "tension_divergence": 0.00197
+          },
+          {
+            "agent_id": "C16",
+            "name": "Indonesia",
+            "gdp_divergence": 0.00022,
+            "trust_divergence": 0.00463,
+            "tension_divergence": 0.00028
+          },
+          {
+            "agent_id": "C17",
+            "name": "Netherlands",
+            "gdp_divergence": 0.00191,
+            "trust_divergence": 0.00082,
+            "tension_divergence": 0.00052
+          },
+          {
+            "agent_id": "C18",
+            "name": "Saudi Arabia",
+            "gdp_divergence": 0.00093,
+            "trust_divergence": 0.00013,
+            "tension_divergence": 5e-05
+          },
+          {
+            "agent_id": "C19",
+            "name": "Turkey",
+            "gdp_divergence": 0.00172,
+            "trust_divergence": 0.00014,
+            "tension_divergence": 2e-05
+          },
+          {
+            "agent_id": "C20",
+            "name": "Switzerland",
+            "gdp_divergence": 0.00222,
+            "trust_divergence": 0.00687,
+            "tension_divergence": 0.00026
+          },
+          {
+            "agent_id": "C99",
+            "name": "Rest of World",
+            "gdp_divergence": 0.00017,
+            "trust_divergence": 0.00462,
+            "tension_divergence": 0.00103
+          }
+        ],
+        "conditions": {
+          "mean_gdp_div_lt_008": true,
+          "mean_trust_div_lt_010": true,
+          "action_match_rate_gt_060": true
+        }
+      }
+    },
+    {
+      "test_id": "T8",
+      "timestamp": "2026-03-17T00:33:22.648016+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "coherence_score": 0.989,
+        "total_applicable": 94,
+        "total_violated": 1,
+        "applicable_by_rule": {
+          "C1": 1,
+          "C2": 0,
+          "C3": 30,
+          "C4": 0,
+          "C5": 63
+        },
+        "violated_by_rule": {
+          "C1": 1,
+          "C2": 0,
+          "C3": 0,
+          "C4": 0,
+          "C5": 0
+        },
+        "violation_rate_by_rule": {
+          "C1": 1.0,
+          "C2": 0.0,
+          "C3": 0.0,
+          "C4": 0.0,
+          "C5": 0.0
+        }
+      },
+      "flagged_items": [
+        "Rule C1: 1/1 violations (100%)"
+      ],
+      "notes": "Completed in 1065.2s. 1 total violations.",
+      "details": {
+        "violations": [
+          {
+            "rule": "C1",
+            "step": 0,
+            "agent": "Japan",
+            "detail": "mil_change=0.0081 despite debt_stress=0.82/tension=0.30"
+          }
+        ],
+        "conditions": {
+          "coherence_score_gt_085": true,
+          "no_rule_gt_30pct": false
+        }
+      }
+    },
+    {
+      "test_id": "T9",
+      "timestamp": "2026-03-17T00:50:24.721411+00:00",
+      "status": "FAIL",
+      "metrics": {
+        "mean_abs_gdp_delta": 0.0013,
+        "mean_abs_trust_delta": 0.0099,
+        "action_diversity_ratio": 1.19,
+        "llm_unique_action_types": 25,
+        "simple_unique_action_types": 21,
+        "sanctions_llm": 0,
+        "sanctions_simple": 0,
+        "trade_deals_llm": 84,
+        "trade_deals_simple": 0,
+        "security_actions_llm": 2
+      },
+      "flagged_items": [
+        "GDP divergence only 0.1% (threshold: >2%)",
+        "LLM produced zero sanctions"
+      ],
+      "notes": "Completed in 1022.1s. LLM log: 63 rows.",
+      "details": {
+        "agent_details": [
+          {
+            "agent_id": "C01",
+            "name": "United States",
+            "gdp_simple": 32.3954,
+            "gdp_llm": 32.4273,
+            "gdp_delta_pct": 0.12,
+            "trust_simple": 0.5518,
+            "trust_llm": 0.5703,
+            "tension_simple": 0.2863,
+            "tension_llm": 0.2822
+          },
+          {
+            "agent_id": "C02",
+            "name": "China",
+            "gdp_simple": 20.9158,
+            "gdp_llm": 20.882,
+            "gdp_delta_pct": 0.18,
+            "trust_simple": 0.5564,
+            "trust_llm": 0.5587,
+            "tension_simple": 0.3233,
+            "tension_llm": 0.3204
+          },
+          {
+            "agent_id": "C03",
+            "name": "Japan",
+            "gdp_simple": 4.6811,
+            "gdp_llm": 4.68,
+            "gdp_delta_pct": 0.02,
+            "trust_simple": 0.3154,
+            "trust_llm": 0.3342,
+            "tension_simple": 0.534,
+            "tension_llm": 0.5302
+          },
+          {
+            "agent_id": "C04",
+            "name": "Germany",
+            "gdp_simple": 5.7017,
+            "gdp_llm": 5.7157,
+            "gdp_delta_pct": 0.31,
+            "trust_simple": 0.5626,
+            "trust_llm": 0.5794,
+            "tension_simple": 0.2954,
+            "tension_llm": 0.2916
+          },
+          {
+            "agent_id": "C05",
+            "name": "India",
+            "gdp_simple": 4.2837,
+            "gdp_llm": 4.297,
+            "gdp_delta_pct": 0.36,
+            "trust_simple": 0.5701,
+            "trust_llm": 0.5758,
+            "tension_simple": 0.2984,
+            "tension_llm": 0.2963
+          },
+          {
+            "agent_id": "C06",
+            "name": "United Kingdom",
+            "gdp_simple": 4.0239,
+            "gdp_llm": 4.0227,
+            "gdp_delta_pct": 0.03,
+            "trust_simple": 0.5626,
+            "trust_llm": 0.5641,
+            "tension_simple": 0.2847,
+            "tension_llm": 0.283
+          },
+          {
+            "agent_id": "C07",
+            "name": "France",
+            "gdp_simple": 3.7249,
+            "gdp_llm": 3.7221,
+            "gdp_delta_pct": 0.09,
+            "trust_simple": 0.5632,
+            "trust_llm": 0.5645,
+            "tension_simple": 0.2932,
+            "tension_llm": 0.2914
+          },
+          {
+            "agent_id": "C08",
+            "name": "Italy",
+            "gdp_simple": 2.7577,
+            "gdp_llm": 2.758,
+            "gdp_delta_pct": 0.01,
+            "trust_simple": 0.5601,
+            "trust_llm": 0.5657,
+            "tension_simple": 0.292,
+            "tension_llm": 0.2895
+          },
+          {
+            "agent_id": "C09",
+            "name": "Brazil",
+            "gdp_simple": 2.6698,
+            "gdp_llm": 2.667,
+            "gdp_delta_pct": 0.13,
+            "trust_simple": 0.5371,
+            "trust_llm": 0.5383,
+            "tension_simple": 0.3304,
+            "tension_llm": 0.3292
+          },
+          {
+            "agent_id": "C10",
+            "name": "Canada",
+            "gdp_simple": 2.6651,
+            "gdp_llm": 2.6665,
+            "gdp_delta_pct": 0.07,
+            "trust_simple": 0.5642,
+            "trust_llm": 0.5671,
+            "tension_simple": 0.2885,
+            "tension_llm": 0.2865
+          },
+          {
+            "agent_id": "C11",
+            "name": "South Korea",
+            "gdp_simple": 2.1691,
+            "gdp_llm": 2.1699,
+            "gdp_delta_pct": 0.04,
+            "trust_simple": 0.5607,
+            "trust_llm": 0.6077,
+            "tension_simple": 0.32,
+            "tension_llm": 0.3124
+          },
+          {
+            "agent_id": "C12",
+            "name": "Russia",
+            "gdp_simple": 2.5291,
+            "gdp_llm": 2.5255,
+            "gdp_delta_pct": 0.17,
+            "trust_simple": 0.561,
+            "trust_llm": 0.5631,
+            "tension_simple": 0.3098,
+            "tension_llm": 0.3078
+          },
+          {
+            "agent_id": "C13",
+            "name": "Australia",
+            "gdp_simple": 2.1319,
+            "gdp_llm": 2.1338,
+            "gdp_delta_pct": 0.11,
+            "trust_simple": 0.5611,
+            "trust_llm": 0.6011,
+            "tension_simple": 0.2846,
+            "tension_llm": 0.2779
+          },
+          {
+            "agent_id": "C14",
+            "name": "Spain",
+            "gdp_simple": 1.9912,
+            "gdp_llm": 1.9908,
+            "gdp_delta_pct": 0.03,
+            "trust_simple": 0.5611,
+            "trust_llm": 0.5657,
+            "tension_simple": 0.3041,
+            "tension_llm": 0.3018
+          },
+          {
+            "agent_id": "C15",
+            "name": "Mexico",
+            "gdp_simple": 2.1746,
+            "gdp_llm": 2.1714,
+            "gdp_delta_pct": 0.18,
+            "trust_simple": 0.5471,
+            "trust_llm": 0.5485,
+            "tension_simple": 0.3269,
+            "tension_llm": 0.3255
+          },
+          {
+            "agent_id": "C16",
+            "name": "Indonesia",
+            "gdp_simple": 1.6151,
+            "gdp_llm": 1.6178,
+            "gdp_delta_pct": 0.2,
+            "trust_simple": 0.5559,
+            "trust_llm": 0.5716,
+            "tension_simple": 0.3267,
+            "tension_llm": 0.3236
+          },
+          {
+            "agent_id": "C17",
+            "name": "Netherlands",
+            "gdp_simple": 1.4462,
+            "gdp_llm": 1.4452,
+            "gdp_delta_pct": 0.09,
+            "trust_simple": 0.5708,
+            "trust_llm": 0.5745,
+            "tension_simple": 0.2861,
+            "tension_llm": 0.2838
+          },
+          {
+            "agent_id": "C18",
+            "name": "Saudi Arabia",
+            "gdp_simple": 1.4742,
+            "gdp_llm": 1.4742,
+            "gdp_delta_pct": 0.0,
+            "trust_simple": 0.5441,
+            "trust_llm": 0.5457,
+            "tension_simple": 0.3332,
+            "tension_llm": 0.3317
+          },
+          {
+            "agent_id": "C19",
+            "name": "Turkey",
+            "gdp_simple": 1.3236,
+            "gdp_llm": 1.3205,
+            "gdp_delta_pct": 0.27,
+            "trust_simple": 0.5462,
+            "trust_llm": 0.547,
+            "tension_simple": 0.3233,
+            "tension_llm": 0.3225
+          },
+          {
+            "agent_id": "C20",
+            "name": "Switzerland",
+            "gdp_simple": 1.1379,
+            "gdp_llm": 1.1392,
+            "gdp_delta_pct": 0.14,
+            "trust_simple": 0.5616,
+            "trust_llm": 0.5635,
+            "tension_simple": 0.2958,
+            "tension_llm": 0.294
+          },
+          {
+            "agent_id": "C99",
+            "name": "Rest of World",
+            "gdp_simple": 20.6554,
+            "gdp_llm": 20.6918,
+            "gdp_delta_pct": 0.19,
+            "trust_simple": 0.4476,
+            "trust_llm": 0.4621,
+            "tension_simple": 0.4198,
+            "tension_llm": 0.415
+          }
+        ],
+        "llm_action_types_sample": [
+          "C01:climate_moderate+trade_deal",
+          "C02:military_exercise+trade_deal",
+          "C02:trade_deal",
+          "C03:climate_moderate+trade_deal",
+          "C03:trade_deal",
+          "C04:climate_moderate+trade_deal",
+          "C05:climate_moderate+trade_deal",
+          "C05:trade_deal",
+          "C06:climate_moderate+trade_deal",
+          "C07:climate_moderate+trade_deal",
+          "C08:climate_moderate+trade_deal",
+          "C09:trade_deal",
+          "C10:climate_moderate+trade_deal",
+          "C11:climate_moderate+trade_deal",
+          "C12:trade_deal",
+          "C13:climate_moderate+trade_deal",
+          "C14:climate_moderate+trade_deal",
+          "C15:trade_deal",
+          "C16:climate_moderate+trade_deal",
+          "C17:climate_moderate+trade_deal"
+        ],
+        "conditions": {
+          "gdp_divergence_gt_002": false,
+          "action_diversity_gt_2x": false,
+          "sanctions_llm_gt_0": false
+        }
+      }
+    }
+  ]
+}
